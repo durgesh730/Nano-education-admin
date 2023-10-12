@@ -1,0 +1,334 @@
+.detailsComponent {
+    position: relative;
+    align-items: center;
+    top: 6rem;
+}
+
+.floatbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.undoButton {
+    font-family: 'Gilroy', sans-serif !important;
+    align-items: center;
+    margin-right: 8px;
+    padding: 6px 12px;
+    background-color: transparent;
+    color: #6D7A85;
+    border: 1px solid #6C757D;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 90px;
+    margin-top: -2px;
+}
+
+.buttonIcon {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+.profileSections {
+    left: 1.5rem;
+    padding-top: 2rem;
+    position: absolute;
+    font-family: 'Gilroy', sans-serif !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.detailsImg img {
+    width: 92%;
+}
+
+.personalDetails {
+    font-family: 'Gilroy', sans-serif !important;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.personalSub {
+    color: #404040;
+    font-family: 'Gilroy', sans-serif !important;
+    align-items: center;
+    padding-top: .5rem;
+}
+
+.personalheading {
+    font-family: 'Gilroy', sans-serif !important;
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.personalIcons {
+    color: #404040;
+    padding-right: .7rem;
+    font-size: 1rem;
+}
+
+.demographicsCss {
+    font-family: 'Gilroy', sans-serif !important;
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.demographicsHeading {
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.BioCss {
+    font-family: 'Gilroy', sans-serif !important;
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.bioheading {
+    font-family: 'Gilroy', sans-serif !important;
+    padding-bottom: 0rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.favInt {
+    font-family: 'Gilroy', sans-serif !important;
+    padding-top: .5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.FavInterest {
+    /* margin-top: 1rem; */
+    align-items: center;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.IconsIntereset {
+    color: #404040;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.OnlyIconsInterest {
+    padding-right: .5rem;
+}
+
+.PavInterestheading {
+    padding-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.familyDetailsheading {
+    padding-bottom: .5rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.habitslife {
+    margin-top: 1rem;
+    align-items: center;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.habitslifeflex {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.CareerEducation {
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.familyDetails {
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.familyImg img {
+    width: 100%;
+}
+
+.Occupation {
+    color: #404040;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.income {
+    color: #404040;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.hobbies {
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.hobbiesImg img {
+    width: 100%;
+}
+
+.photosImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photosImg img {
+    width: 5rem;
+}
+
+.photos {
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.partner {
+    margin-top: 1rem;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    padding: 12px;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px -8px black;
+}
+
+.partnerheading {
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.photosheading {
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.hobbiesheading {
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.partnerdetails {
+    color: #404040;
+    padding-top: .5rem
+}
+
+.biopara {
+    font-size: 14px;
+    color: #9E9E9E;
+}
+
+.editonfobtn {
+    cursor: pointer;
+    padding-top: .4rem;
+    color: #9E9E9E;
+}
+
+@media screen and (max-width:1024px) {
+    .profileSections {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width:912px) {
+    .profileSections {
+        gap: 4rem;
+        margin: auto;
+    }
+
+    .personalDetails,
+    .demographicsCss,
+    .BioCss,
+    .compatibility,
+    .compatibilityChart,
+    .photos,
+    .FavInterest,
+    .habitslife,
+    .CareerEducation,
+    .familyDetails,
+    .hobbies,
+    .partner {
+        width: 95%;
+    }
+
+    .detailsImg img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .profileSections {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

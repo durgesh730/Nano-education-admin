@@ -1,0 +1,9 @@
+/* global.css */
+body {
+  user-select: none;
+  background-color: #E9ECEF;
+}
+
+.page{
+  background-color: black;
+}
