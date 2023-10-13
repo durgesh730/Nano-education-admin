@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { FaLock } from 'react-icons/fa'; // Import the FaLock icon from react-icons
 import logo from '../assets/LogoTransparent.png';
 import TopMargin from '../assets/TopMargin.png';
@@ -11,7 +11,7 @@ const NewPasswordForm = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleNewPasswordChange = (event) => {
     setNewPassword(event.target.value);

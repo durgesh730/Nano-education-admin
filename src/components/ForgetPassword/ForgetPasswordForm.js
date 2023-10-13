@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo} from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import logo from '../assets/LogoTransparent.png';
 import TopMargin from '../assets/TopMargin.png';
 import rightContainerImage from '../assets/RightContainer.png';
@@ -18,7 +18,6 @@ const ForgetPasswordForm = () => {
     () => Array(6).fill().map(() => React.createRef(null)),
     []
   );
-  const history = useHistory();
 
   const emailArrays = [
     ['pranavbhargava.1@gmail.com', 'Pranav'],
