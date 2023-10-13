@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './Dashboard.module.css';
 import Sidebar from '../SideBar/Sidebar';
 import TopBarWelcome from '../TopBar&Welcome/TopBarWelcome';
+import User from './User';
+import Quize from './Quize';
 // import PieGraphsContent from "../PieGraphsContent/PieGraphsContent";
 // import Demographic from '../Demographics/Demographic';
 //import Profile from '../Profile/Profile';
@@ -27,10 +29,10 @@ const Dashboard = () => {
       <Sidebar setActivePage={setActivePage} />
       <div className={styles.rightContainer}>
         {/* PieGraphs */}
-        {/* {activePage === 'Dashboard' && <PieGraphsContent />} */}
+        {activePage === 'Dashboard' && <User/>}
 
         {/*Demographic*/}
-        {/* {activePage === 'Demographic' && <Demographic />} */}
+        {activePage === 'Quize' && <Quize/>}
 
         {/* Profile */}
         {/* {activePage === 'Profile' && <Profile />} */}

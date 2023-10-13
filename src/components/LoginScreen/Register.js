@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -47,10 +48,9 @@ export default function Login() {
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <Grid container component="main" sx={{ height: '100vh', }}>
-
+            <Grid container component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
-                <Grid 
+                <Grid
                     item
                     xs={false}
                     sm={4}
@@ -62,7 +62,6 @@ export default function Login() {
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        width:"90%"
                     }}
                 />
 
@@ -101,6 +100,18 @@ export default function Login() {
                                 required
                                 fullWidth
                                 name="password"
+                                label="Confirm Password"
+                                type="password"
+                                id="password"
+                                autoComplete="current-password"
+                            />
+
+                            <TextField
+                                margin="normal"
+                                size='small'
+                                required
+                                fullWidth
+                                name="password"
                                 label="Password"
                                 type="password"
                                 id="password"
@@ -125,10 +136,10 @@ export default function Login() {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link sx={{ cursor: "pointer" }} 
+                                    <Link sx={{ cursor: "pointer" }}
                                     // onClick={handleNavigation}
                                     >
-                                        {"Don't have an account? Sign Up"}
+                                        {"Already have an account? Sign In"}
                                     </Link>
 
                                 </Grid>

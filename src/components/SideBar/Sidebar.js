@@ -5,15 +5,8 @@ import styles from './Sidebar.module.css';
 import logo from '../assets/LogoTransparent.png';
 
 const sidebarButtons = [
-  { name: 'Dashboard', icon: Home },
-  { name: 'Demographic', icon: BarChart },
-  { name: 'Profile', icon: People },
-  { name: 'Compatibility', icon: Assignment },
-  { name: 'E-Quiz', icon: QuestionAnswer },
-  { name: 'Answers', icon: Assignment },
-  { name: 'Subscriptions', icon: Subscriptions },
-  { name: 'Roles', icon: People },
-  { name: 'Mail', icon: Mail }
+  { name: 'User', icon: Home },
+  { name: 'Quize', icon: BarChart },
 ];
 
 const Sidebar = ({ setActivePage }) => {
