@@ -4,6 +4,7 @@ import Sidebar from '../SideBar/Sidebar';
 import TopBarWelcome from '../TopBar&Welcome/TopBarWelcome';
 import User from './User';
 import Quize from './Quize';
+import Counselling from './Counselling';
 
 const Dashboard = () => {
   const name = 'Austin Robertson';
@@ -22,7 +23,7 @@ const Dashboard = () => {
         {activePage === 'Quize' && <Quize/>}
 
         {/* Profile */}
-        {/* {activePage === 'Profile' && <Profile />} */}
+        {activePage === 'Counselling' && <Counselling />}
 
       </div>
     </div>

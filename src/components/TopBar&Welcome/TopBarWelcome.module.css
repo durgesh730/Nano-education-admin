@@ -2,6 +2,19 @@
   margin-bottom: 10px;
 }
 
+.LogOut button{
+  color: white;
+    background-color: #6D0954;
+    border-radius: .3rem;
+    padding: .6rem 1.5rem;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+.LogOut{
+  margin-right: 15px;
+}
+
 .topBar {
   display: flex;
   align-items: center;
@@ -25,11 +38,12 @@
   border-radius: 50%;
   cursor: pointer;
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .userInfo {
   display: flex;
+  margin-right: 50px;
   align-items: center;
   margin-left: 8px;
   cursor: pointer;

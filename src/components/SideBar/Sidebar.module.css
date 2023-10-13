@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Condensed&family=Courgette&family=Fira+Sans&family=Fredoka+One&family=Inter:wght@300&family=Leckerli+One&family=Pacifico&family=Poppins:wght@500&family=Roboto&family=Roboto+Condensed&family=Rubik&family=Signika+Negative:wght@300&family=Source+Sans+Pro&family=Ubuntu:wght@300;400&family=Varela+Round&family=Yanone+Kaffeesatz&display=swap');
+
 .sidebar {
   width: 200px !important;
   background-color: #ffffff;
@@ -20,8 +22,7 @@
 }
 
 .logo {
-  width: 80px;
-  height: 70px;
+ 
 }
 
 .hamburgerIcon {

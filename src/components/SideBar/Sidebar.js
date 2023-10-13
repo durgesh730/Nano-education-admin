@@ -3,10 +3,12 @@ import { Container, Typography, List, ListItem, ListItemIcon, IconButton, Modal 
 import { Home, BarChart, ChevronRight, Menu } from '@material-ui/icons';
 import styles from './Sidebar.module.css';
 import logo from '../assets/LogoTransparent.png';
+import { Grid } from '@mui/material';
 
 const sidebarButtons = [
   { name: 'User', icon: Home },
   { name: 'Quize', icon: BarChart },
+  { name: 'Counselling', icon: BarChart },
 ];
 
 const Sidebar = ({ setActivePage }) => {
@@ -48,9 +50,9 @@ const Sidebar = ({ setActivePage }) => {
           </IconButton>
           <Modal open={isSidebarVisible} onClose={handleHamburgerClick}>
             <div className={`${styles.sidebar} ${isSidebarVisible ? styles.open : ''}`}>
-              <div className={styles.logoContainer}>
+              {/* <div className={styles.logoContainer}>
                 <img src={logo} alt="Logo" className={styles.logo} />
-              </div>
+              </div> */}
               <div>
                 <Typography variant="body2" className={styles.subtitle}>
                   Home
@@ -114,9 +116,17 @@ const Sidebar = ({ setActivePage }) => {
         </>
       ) : (
         <Container className={styles.sidebar}>
-          <div className={styles.logoContainer}>
+          <Grid sx={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: '12px', fontSize: '40px' }}
+          >
+            <Typography className='logo' style={{ fontSize: '30px', fontFamily: 'Leckerli One' }}>
+              Nano Chat
+            </Typography>
+
+          </Grid>
+
+          {/* <div className={styles.logoContainer}>
             <img src={logo} alt="Logo" className={styles.logo} />
-          </div>
+          </div> */}
           <div>
             <Typography variant="body2" className={styles.subtitle}>
               Home
