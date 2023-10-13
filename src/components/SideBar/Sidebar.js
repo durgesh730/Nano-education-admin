@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Container, Typography, List, ListItem, ListItemIcon, IconButton, Modal } from '@material-ui/core';
 import { Home, BarChart, ChevronRight, Menu } from '@material-ui/icons';
 import styles from './Sidebar.module.css';
-import logo from '../assets/LogoTransparent.png';
 import { Grid } from '@mui/material';
 
 const sidebarButtons = [
@@ -28,12 +27,12 @@ const Sidebar = ({ setActivePage }) => {
       setIsMobile(window.innerWidth <= 912);
     };
 
-    handleResize(); // Call initially to set the initial value
+    handleResize();
 
-    window.addEventListener('resize', handleResize); // Listen for window resize events
+    window.addEventListener('resize', handleResize); 
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Clean up the event listener
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -50,9 +49,6 @@ const Sidebar = ({ setActivePage }) => {
           </IconButton>
           <Modal open={isSidebarVisible} onClose={handleHamburgerClick}>
             <div className={`${styles.sidebar} ${isSidebarVisible ? styles.open : ''}`}>
-              {/* <div className={styles.logoContainer}>
-                <img src={logo} alt="Logo" className={styles.logo} />
-              </div> */}
               <div>
                 <Typography variant="body2" className={styles.subtitle}>
                   Home
@@ -123,10 +119,6 @@ const Sidebar = ({ setActivePage }) => {
             </Typography>
 
           </Grid>
-
-          {/* <div className={styles.logoContainer}>
-            <img src={logo} alt="Logo" className={styles.logo} />
-          </div> */}
           <div>
             <Typography variant="body2" className={styles.subtitle}>
               Home

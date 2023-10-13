@@ -41,11 +41,6 @@ export default function Login() {
         });
     };
 
-    // const navigate = useNavigate()
-    // const handleNavigation = () => {
-    //     navigate('/register')
-    // }
-
     return (
         <ThemeProvider theme={defaultTheme}>
             <Grid container component="main" sx={{ height: '100vh', }}>
