@@ -4,24 +4,11 @@ import Sidebar from '../SideBar/Sidebar';
 import TopBarWelcome from '../TopBar&Welcome/TopBarWelcome';
 import User from './User';
 import Quize from './Quize';
-// import PieGraphsContent from "../PieGraphsContent/PieGraphsContent";
-// import Demographic from '../Demographics/Demographic';
-//import Profile from '../Profile/Profile';
-//import Compatibility from '../Compatibility/Compatibility';
-//import E-Quiz from '../E-Quiz/E-Quiz';
-// import Answers from '../Answers/Answers';
-// import Profile from '../Profile/Profile';
-// import Compatibility from '../Compatibility/Compatibility';
-// import EQuiz from '../E-Quiz/E-Quiz';
-//import Answers from '../Answers/Answers';
-// import Subscriptions from '../Subscriptions/Subscriptions';
-// import Roles from '../Roles/Roles';
-//import Mail from '../Mail/Mail';
 
 const Dashboard = () => {
   const name = 'Austin Robertson';
   const position = 'Marketing Administrator';
-  const [activePage, setActivePage] = useState('Dashboard');
+  const [activePage, setActivePage] = useState('User');
 
   return (
     <div className={styles.dashboardContainer}>
@@ -29,33 +16,13 @@ const Dashboard = () => {
       <Sidebar setActivePage={setActivePage} />
       <div className={styles.rightContainer}>
         {/* PieGraphs */}
-        {activePage === 'Dashboard' && <User/>}
+        {activePage === 'User' && <User/>}
 
         {/*Demographic*/}
         {activePage === 'Quize' && <Quize/>}
 
         {/* Profile */}
         {/* {activePage === 'Profile' && <Profile />} */}
-
-        {/* Compatibility */}
-        {/* {activePage === 'Compatibility' && <Compatibility />} */}
-        {/*Compatibility
-        {activePage === 'Compatibility' && <Compatibility />}*/}
-
-        {/* E-Quiz* */}
-        {/* {activePage === 'E-Quiz' && <EQuiz />} */}
-
-        {/* Answers */}
-        {/* {activePage === 'Answers' && <Answers />} */}
-
-        {/* Subscriptions */}
-        {/* {activePage === 'Subscriptions' && <Subscriptions />} */}
-
-        {/* Roles */}
-        {/* {activePage === 'Roles' && <Roles />} */}
-
-        {/*Mail
-        {activePage === 'Mail' && <Mail />}*/}
 
       </div>
     </div>

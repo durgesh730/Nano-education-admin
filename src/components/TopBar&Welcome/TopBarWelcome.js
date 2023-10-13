@@ -4,7 +4,7 @@ import { Typography, IconButton, MenuItem, Badge, Modal } from '@material-ui/cor
 import { Notifications} from '@material-ui/icons';
 import styles from './TopBarWelcome.module.css';
 import { CircleFlag } from 'react-circle-flags';
-import UserAccount from '../UserAccount/UserAccount';
+
 const TopBarWelcome = ({ name, position }) => {
   const countryOptions = [
     { value: 'us', label: 'United States' },
@@ -18,7 +18,7 @@ const TopBarWelcome = ({ name, position }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNotificationModalOpen, setIsNotificationModalOpen] = useState(false);
   const [notifications, setNotifications] = useState([]);
-  const [userAcccount,setUserAccount] = useState(false);
+
   const handleFlagClick = () => {
     //setIsDropdownOpen(!isDropdownOpen);
   };
@@ -27,18 +27,6 @@ const TopBarWelcome = ({ name, position }) => {
     //setSelectedCountryCode(countryCode);
     //setIsDropdownOpen(false);
     //handleNewNotification('Country has been changed');
-  };
-
-  const handleUserDpClick = () => {
-    // Perform action for user DP click
-    //handleNewNotification('User DP has been checked.');
-    setUserAccount(!userAcccount);
-  };
-
-  const handleUserInfoClick = () => {
-    // Perform action for userinfo click
-    //handleNewNotification('User Information checked.');
-    setUserAccount(!userAcccount);
   };
 
   const handleNotificationClick = () => {
@@ -51,15 +39,6 @@ const TopBarWelcome = ({ name, position }) => {
     setNotifications([]);
   };
 
-  const handleNewNotification = (message) => {
-    // Add a new notification to the list
-    const newNotification = `${message} - ${new Date().toLocaleTimeString()}`;
-    setNotifications((prevNotifications) => [...prevNotifications, newNotification]);
-  };
- 
-  const hadleUserAccountVis = () =>{
-    setUserAccount(!userAcccount);
-  }
   return (
     <div className={styles.topBarWelcome}>
       <div className={styles.topBar}>
@@ -84,10 +63,10 @@ const TopBarWelcome = ({ name, position }) => {
             <Notifications />
           </Badge>
         </IconButton>
-        <div className={styles.userDp} onClick={handleUserDpClick}>
+        <div className={styles.userDp}>
           <img src={profileImage} alt="User DP" className={styles.userDpImage} />
         </div>
-        <div className={styles.userInfo} onClick={handleUserInfoClick}>
+        <div className={styles.userInfo}>
           <div className={styles.userInfoText}>
             <Typography variant="subtitle1" className={styles.userName}>{name}</Typography>
             <Typography variant="caption" >{position}</Typography>
@@ -109,11 +88,6 @@ const TopBarWelcome = ({ name, position }) => {
           </ul>
         </div>
       </Modal>
-      {
-        userAcccount ?(<>
-        <UserAccount/>
-        </>):(<></>)
-      }
     </div>
   );
 };

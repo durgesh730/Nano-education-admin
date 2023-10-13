@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, List, ListItem, ListItemIcon, IconButton, Modal } from '@material-ui/core';
-import { Home, BarChart, Assignment, QuestionAnswer, Subscriptions, People, Mail, ChevronRight, Menu } from '@material-ui/icons';
+import { Home, BarChart, ChevronRight, Menu } from '@material-ui/icons';
 import styles from './Sidebar.module.css';
 import logo from '../assets/LogoTransparent.png';
 
@@ -10,7 +10,8 @@ const sidebarButtons = [
 ];
 
 const Sidebar = ({ setActivePage }) => {
-  const [selectedButton, setSelectedButton] = useState('Dashboard');
+  const [selectedButton, setSelectedButton] = useState('User');
+
   const [isMobile, setIsMobile] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
