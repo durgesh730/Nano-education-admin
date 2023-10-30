@@ -52,8 +52,9 @@ export default function Login() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
-                        backgroundRepeat: 'no-repeat',
+                        
+                        backgroundImage: 'url(https://unsplash.com/photos/person-holding-black-and-white-microscope-7wWRXewYCH4)',
+                        // backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'cover',
@@ -61,8 +62,8 @@ export default function Login() {
                         width:"90%"
                     }}
                 />
-
-                <Grid item xs={12} sm={8} md={5} paddingTop='2rem' component={Paper} elevation={6} square>
+                
+                <Grid item xs={12} sm={8} md={5}  component={Paper} elevation={6} square>
                     <Box
                         sx={{
                             my: 8,
@@ -70,6 +71,7 @@ export default function Login() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
+                            padding: '2rem'
                         }}
                     >
                         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
