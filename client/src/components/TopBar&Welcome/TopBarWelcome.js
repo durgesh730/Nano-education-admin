@@ -1,4 +1,4 @@
-import profileImage from '../assets/profileImage.png';
+// import profileImage from '../assets/profileImage.png';
 import { Typography} from '@material-ui/core';
 import styles from './TopBarWelcome.module.css';
 
@@ -13,7 +13,7 @@ const TopBarWelcome = () => {
         </div>
 
         <div className={styles.userDp}>
-          <img src={profileImage} alt="User DP" className={styles.userDpImage} />
+          {/* <img src={profileImage} alt="User DP" className={styles.userDpImage} /> */}
         </div>
         
         <div className={styles.userInfo}>

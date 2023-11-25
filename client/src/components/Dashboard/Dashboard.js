@@ -16,13 +16,13 @@ const Dashboard = () => {
       <TopBarWelcome name={name} position={position} />
       <Sidebar setActivePage={setActivePage} />
       <div className={styles.rightContainer}>
-        {/* PieGraphs */}
+        {/* user */}
         {activePage === 'User' && <User/>}
 
-        {/*Demographic*/}
+        {/*Quize*/}
         {activePage === 'Quize' && <Quize/>}
 
-        {/* Profile */}
+        {/* Counselling */}
         {activePage === 'Counselling' && <Counselling />}
 
       </div>

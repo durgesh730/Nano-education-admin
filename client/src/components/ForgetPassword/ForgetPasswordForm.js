@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo, createRef} from 'react';
 import { Link} from 'react-router-dom';
-import logo from '../assets/LogoTransparent.png';
-import TopMargin from '../assets/TopMargin.png';
-import rightContainerImage from '../assets/RightContainer.png';
+// import logo from '../assets/LogoTransparent.png';
+// import TopMargin from '../assets/TopMargin.png';
+// import rightContainerImage from '../assets/RightContainer.png';
 import styles from './ForgetPasswordForm.module.css';
 
 const ForgetPasswordForm = () => {
@@ -127,11 +127,11 @@ const ForgetPasswordForm = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <img src={TopMargin} alt="Top Margin" className={styles.topImage} />
+      {/* <img src={TopMargin} alt="Top Margin" className={styles.topImage} /> */}
       <div className={styles.loginContainer}>
         <div className={styles.leftContainer}>
           <div className={styles.logoContainer}>
-            <img className={styles.logo} src={logo} alt="Logo" />
+            {/* <img className={styles.logo} src={logo} alt="Logo" /> */}
           </div>
           {!showVerification ? (
             <>
@@ -217,7 +217,7 @@ const ForgetPasswordForm = () => {
         </div>
         <div className={styles.rightContainer}>
           <img
-            src={rightContainerImage}
+            // src={rightContainerImage}
             alt="Right Container"
             className={styles.rightImage}
           />

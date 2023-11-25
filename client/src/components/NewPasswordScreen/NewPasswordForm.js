@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
 import { FaLock } from 'react-icons/fa'; // Import the FaLock icon from react-icons
-import logo from '../assets/LogoTransparent.png';
-import TopMargin from '../assets/TopMargin.png';
-import rightContainerImage from '../assets/RightContainer.png';
+// import logo from '../assets/LogoTransparent.png';
+// import TopMargin from '../assets/TopMargin.png';
+// import rightContainerImage from '../assets/RightContainer.png';
 import styles from './NewPasswordForm.module.css';
 
 const NewPasswordForm = () => {
@@ -51,11 +51,11 @@ const NewPasswordForm = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <img src={TopMargin} alt="Top Margin" className={styles.topImage} />
+      {/* <img src={TopMargin} alt="Top Margin" className={styles.topImage} /> */}
       <div className={styles.loginContainer}>
         <div className={styles.leftContainer}>
           <div className={styles.logoContainer}>
-            <img src={logo} alt="Logo" className={styles.logo} />
+            {/* <img src={logo} alt="Logo" className={styles.logo} /> */}
           </div>
           <h2 className={styles.heading}>New Password</h2>
           <p className={styles.text}>Enter New Password for the admin panel</p>
@@ -87,7 +87,7 @@ const NewPasswordForm = () => {
           </form>
         </div>
         <div className={styles.rightContainer}>
-          <img src={rightContainerImage} alt="Right Container" className={styles.rightImage} />
+          {/* <img src={rightContainerImage} alt="Right Container" className={styles.rightImage} /> */}
         </div>
       </div>
     </div>
