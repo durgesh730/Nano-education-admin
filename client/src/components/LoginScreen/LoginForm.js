@@ -1,4 +1,4 @@
-import * as React from 'react';
+//mui
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,8 +11,11 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+// mui
 import { Link } from 'react-router-dom';
 
+// component
+import { handleLogin } from '../api'
 
 function Copyright(props) {
     return (
@@ -28,25 +31,31 @@ function Copyright(props) {
 }
 
 // TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
-export default function Login() {
+const Login = () => {
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        const form = {
             email: data.get('email'),
             password: data.get('password'),
-        });
+        }
+
+        handleLogin(form)
+            .then((res) => {
+                console.log(res, "response");
+            }).catch((err) => {
+                console.log(err);
+            })
     };
 
     return (
         <ThemeProvider theme={defaultTheme}>
             <Grid container component="main" sx={{ height: '100vh', }}>
-
                 <CssBaseline />
-                <Grid 
+                <Grid
                     item
                     xs={false}
                     sm={4}
@@ -58,7 +67,7 @@ export default function Login() {
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        width:"90%"
+                        width: "90%"
                     }}
                 />
 
@@ -114,20 +123,10 @@ export default function Login() {
                             >
                                 Sign In
                             </Button>
-                            <Grid container>
-                                <Grid item xs>
-                                    <Link href="#" variant="body2">
-                                        Forgot password?
-                                    </Link>
-                                </Grid>
-                                <Grid item>
-                                    <Link to={"/register"} sx={{ cursor: "pointer" }} 
-                                    // onClick={handleNavigation}
-                                    >
-                                        {"Don't have an account? Sign Up"}
-                                    </Link>
 
-                                </Grid>
+                            <Grid container>
+                                <Grid item xs><Link href="#" variant="body2">Forgot password?</Link></Grid>
+                                <Grid><Link to={"/register"} sx={{ cursor: "pointer" }}>{"Don't have an account? Sign Up"}</Link></Grid>
                             </Grid>
                             <Copyright sx={{ mt: 5 }} />
                         </Box>
@@ -137,3 +136,5 @@ export default function Login() {
         </ThemeProvider>
     );
 }
+
+export default Login;

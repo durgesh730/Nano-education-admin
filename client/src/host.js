@@ -1,0 +1,1 @@
+export const hostserver = "http://localhost:5000/api"

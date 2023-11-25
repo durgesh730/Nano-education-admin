@@ -1,17 +1,18 @@
 .topBarWelcome {
   margin-bottom: 10px;
+  background-color: #232354;
 }
 
 .LogOut button{
   color: white;
-    background-color: #6D0954;
+    background-color: #232354;
     border-radius: .3rem;
     padding: .6rem 1.5rem;
     border: none;
     font-size: 16px;
     font-weight: 400;
-}
-.LogOut{
+  }
+  .LogOut{
   margin-right: 15px;
 }
 

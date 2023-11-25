@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo} from 'react';
+import React, { useState, useEffect, useMemo, createRef} from 'react';
 import { Link} from 'react-router-dom';
 import logo from '../assets/LogoTransparent.png';
 import TopMargin from '../assets/TopMargin.png';
@@ -14,9 +14,7 @@ const ForgetPasswordForm = () => {
   const [verifying, setVerifying] = useState(false);
   const [filledInputCount, setFilledInputCount] = useState(0);
   const [remainingTime, setRemainingTime] = useState(30);
-  const verificationCodeInputRefs = useMemo(
-    () => Array(6).fill().map(() => React.createRef(null)),
-    []
+  const verificationCodeInputRefs = useMemo(() => Array(6).fill().map(() =>createRef(null)),[]
   );
 
   const emailArrays = [
