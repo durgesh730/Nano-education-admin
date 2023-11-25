@@ -20,10 +20,10 @@ export async function Signup() {
 }
 
 export async function Users() {
-    return axios.get(`${hostserver}/users`)
+    return axios.get(`${hostserver}/get/all/user`)
         .then((res) => {
-            console.log(res, "user response");
+            return res
         }).catch((error) => {
-            console.log(error);
+            return error
         })
 }

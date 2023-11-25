@@ -6,36 +6,27 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Typography, Grid } from '@mui/material';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Users } from '../api';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, email, fat, carbs, protein) {
+  return { name, email, fat, carbs, protein };
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 export default function DenseTable() {
+  const [user, setUser] = useState([]);
+
+  // console.log(user, )
+
+  const rows = user.map((item) => {
+    return createData(item.fname, item.email, 6.0, 24)
+  })
 
   useEffect(() => {
     Users()
       .then((res) => {
-        console.log(res, "data")
+        setUser(res?.data.result)
       }).catch((err) => {
         console.log(err)
       })
@@ -43,34 +34,32 @@ export default function DenseTable() {
 
   return (
     <>
-      <Grid sx={{ paddingTop: '4rem' }} >
-        <Grid sx={{ paddingLeft: "2rem", paddingTop: '1rem', paddingBottom: "1rem" }} >
-          <Typography sx={{ fontSize: "2rem", fontWeight: 600 }} >Users</Typography>
+      <Grid sx={{ paddingTop: '6rem' }} >
+        <Grid sx={{ paddingLeft: "2rem" }} >
+          <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>Users</Typography>
         </Grid>
-        <TableContainer component={Paper} sx={{ margin: "auto", marginTop: '1rem', width: '96%' }}>
+        <TableContainer component={Paper} sx={{ margin: "auto", marginTop: '1rem', width: '96%', padding:"10px" }}>
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell>Dessert (100g serving)</TableCell>
-                <TableCell align="right">Calories</TableCell>
-                <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                <TableCell>S.No</TableCell>
+                <TableCell align="right">Name</TableCell>
+                <TableCell align="right">Email</TableCell>
+                <TableCell align="right">Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {rows.map((row, indx) => (
                 <TableRow
-                  key={row.name}
+                  key={indx}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row.name}
+                    {indx + 1}
                   </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
-                  <TableCell align="right">{row.fat}</TableCell>
+                  <TableCell align="right">{row.name}</TableCell>
+                  <TableCell align="right">{row.email}</TableCell>
                   <TableCell align="right">{row.carbs}</TableCell>
-                  <TableCell align="right">{row.protein}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
