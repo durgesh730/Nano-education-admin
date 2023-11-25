@@ -70,8 +70,8 @@ const Login = () => {
                         width: "90%"
                     }}
                 />
-
-                <Grid item xs={12} sm={8} md={5} paddingTop='2rem' component={Paper} elevation={6} square>
+                
+                <Grid item xs={12} sm={8} md={5}  component={Paper} elevation={6} square>
                     <Box
                         sx={{
                             my: 8,
@@ -79,6 +79,7 @@ const Login = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
+                            padding: '2rem'
                         }}
                     >
                         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
