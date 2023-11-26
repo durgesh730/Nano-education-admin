@@ -6,7 +6,7 @@ export async function handleLogin(form) {
         .then((res) => {
             return res.response
         }).catch((error) => {
-            console.log(error);
+            return error
         })
 }
 

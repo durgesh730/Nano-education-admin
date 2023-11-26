@@ -35,7 +35,7 @@ const defaultTheme = createTheme();
 
 const Login = () => {
 
-    const handleSubmit = async (event) => {
+    const handleSubmit =(event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const form = {
@@ -43,13 +43,12 @@ const Login = () => {
             password: data.get('password'),
         }
 
-        const dat = await handleLogin(form)
-          console.log(dat)
-            // .then((res) => {
-            //     console.log(res, "response");
-            // }).catch((err) => {
-            //     console.log(err);
-            // })
+         handleLogin(form)
+            .then((res) => {
+                console.log(res, "response");
+            }).catch((err) => {
+                console.log(err);
+            })
     };
 
     return (
