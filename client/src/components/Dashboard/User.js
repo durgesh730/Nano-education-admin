@@ -8,6 +8,11 @@ import Paper from '@mui/material/Paper';
 import { Typography, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Users } from '../api';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditIcon from '@mui/icons-material/Edit';
+import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutlined';
+import jsPDF from 'jspdf';
+
 
 function createData(name, email, fat, carbs, protein) {
   return { name, email, fat, carbs, protein };
@@ -22,6 +27,24 @@ export default function DenseTable() {
   const rows = user.map((item) => {
     return createData(item.fname, item.email, 6.0, 24)
   })
+
+  const handleDownload = (userData) => {
+    // Create a new PDF document
+    const doc = new jsPDF();
+
+    // Define content structure
+    const content = `
+       User:
+       Name: ${userData.name}
+       Email: ${userData.email}
+       `;
+
+    // Add content to the PDF
+    doc.text(content, 10, 10);
+
+    // Save the PDF
+    doc.save(`${userData.name}.pdf`);
+  };
 
   useEffect(() => {
     Users()
@@ -38,8 +61,13 @@ export default function DenseTable() {
         <Grid sx={{ paddingLeft: "2rem" }} >
           <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>Users</Typography>
         </Grid>
-        <TableContainer component={Paper} sx={{ margin: "auto", marginTop: '1rem', width: '96%', padding:"10px" }}>
-          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableContainer component={Paper}
+          sx={{ margin: "auto", marginTop: '1rem', width: '96%', padding: "10px" }}
+        >
+          <Table
+            sx={{ minWidth: 650 }}
+            size="small"
+            aria-label="a dense table">
             <TableHead>
               <TableRow>
                 <TableCell>S.No</TableCell>
@@ -59,7 +87,11 @@ export default function DenseTable() {
                   </TableCell>
                   <TableCell align="right">{row.name}</TableCell>
                   <TableCell align="right">{row.email}</TableCell>
-                  <TableCell align="right">{row.carbs}</TableCell>
+                  <TableCell align="right">
+                    <DeleteOutlineIcon />
+                    <EditIcon />
+                    <ArrowCircleDownOutlinedIcon onClick={() => handleDownload(row)} />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
