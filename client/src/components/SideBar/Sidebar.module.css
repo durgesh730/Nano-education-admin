@@ -89,8 +89,10 @@
 
 /* Override MuiListItemIcon styles */
 .MuiListItemIcon-root {
-  width: 3px !important; /* Reset the min-width */
-  padding-right: 0px !important; /* Reduce the right padding */
+  width: 3px !important;
+  /* Reset the min-width */
+  padding-right: 0px !important;
+  /* Reduce the right padding */
 }
 
 @media (max-width: 912px) {
@@ -112,8 +114,8 @@
 
   .hamburgerIcon {
     position: fixed !important;
-    top: 2%!important;
-    left: 2%!important;
+    top: 2% !important;
+    left: 2% !important;
     z-index: 1000 !important;
   }
 
@@ -127,3 +129,20 @@
   }
 }
 
+.LogOut button {
+  color: #232354;
+  background-color: white;
+  border-radius: .3rem;
+  padding: 10px 60px 10px 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.LogOut {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -8,9 +8,9 @@ const TopBarWelcome = () => {
     <div className={styles.topBarWelcome}>
       <div className={styles.topBar}>
         
-        <div className={styles.LogOut}>
+        {/* <div className={styles.LogOut}>
           <button>Log Out</button>
-        </div>
+        </div> */}
 
         <div className={styles.userDp}>
           {/* <img src={profileImage} alt="User DP" className={styles.userDpImage} /> */}

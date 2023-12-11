@@ -6,58 +6,81 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+import { FaEye } from "react-icons/fa";
+import { Typography, Grid } from '@mui/material';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditIcon from '@mui/icons-material/Edit';
+import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutlined';
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+ {
+  name:'Mohan',
+  email:'mohan@gmail.com',
+  dob:'2-11-2001',
+  neetrank:800,
+ },
+ {
+  name:'Varun',
+  email:'varun@gmail.com',
+  dob:'2-11-2001',
+  neetrank:899,
+ },
+ {
+  name:'Monu',
+  email:'monu@gmail.com',
+  dob:'12-11-2001',
+  neetrank:804,
+ },
+ {
+  name:'Vicky',
+  email:'vicky@gmail.com',
+  dob:'30-11-2001',
+  neetrank:801,
+ },
+
 ];
 
 export default function Counselling() {
   return (
-    <TableContainer component={Paper} sx={{ margin:"auto",  marginTop:'5rem', width:'96%'}}>
+    <Grid sx={{ paddingTop: '6rem' }} >
+        <Grid sx={{ paddingLeft: "2rem" }} >
+          <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>Counselling details</Typography>
+        </Grid>
+    <TableContainer component={Paper} sx={{ margin:"auto",  marginTop:'1rem', width:'96%'}}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Sr.no.</TableCell>
+            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">Email</TableCell>
+            <TableCell align="right">DOB</TableCell>
+            <TableCell align="right">Neetrank</TableCell>
+            <TableCell align="right">Scorecard</TableCell>
+            <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row,index) => (
             <TableRow
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {index+1}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.name}</TableCell>
+              <TableCell align="right">{row.email}</TableCell>
+              <TableCell align="right">{row.dob}</TableCell>
+              <TableCell align="right">{row.neetrank}</TableCell>
+              <TableCell align="right">{<FaEye />}</TableCell>
+              <TableCell align="right"><DeleteOutlineIcon />
+                    <EditIcon />
+                    <ArrowCircleDownOutlinedIcon onClick={() => handleDownload(row)} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    </Grid>
   );
 }

@@ -3,6 +3,7 @@ import { Container, Typography, List, ListItem, ListItemIcon, IconButton, Modal 
 import { Home, BarChart, ChevronRight, Menu } from '@material-ui/icons';
 import styles from './Sidebar.module.css';
 import { Grid } from '@mui/material';
+import { IoMdLogIn } from "react-icons/io";
 
 const sidebarButtons = [
   { name: 'User', icon: Home },
@@ -29,7 +30,7 @@ const Sidebar = ({ setActivePage }) => {
 
     handleResize();
 
-    window.addEventListener('resize', handleResize); 
+    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -175,7 +176,12 @@ const Sidebar = ({ setActivePage }) => {
                   </ListItem>
                 ))}
               </List>
+
             </div>
+          </div>
+          <div className={styles.LogOut}>
+            <div className='logouticon'><IoMdLogIn /></div>
+            <button>Log Out</button>
           </div>
         </Container>
       )}
