@@ -65,15 +65,14 @@ export default function DenseTable() {
           sx={{ margin: "auto", marginTop: '1rem', width: '96%', padding: "10px" }}
         >
           <Table
-            sx={{ minWidth: 650 }}
-            size="small"
+            size="medium"
             aria-label="a dense table">
             <TableHead>
               <TableRow>
                 <TableCell>S.No</TableCell>
-                <TableCell align="right">Name</TableCell>
-                <TableCell align="right">Email</TableCell>
-                <TableCell align="right">Actions</TableCell>
+                <TableCell >Name</TableCell>
+                <TableCell >Email</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -85,12 +84,12 @@ export default function DenseTable() {
                   <TableCell component="th" scope="row">
                     {indx + 1}
                   </TableCell>
-                  <TableCell align="right">{row.name}</TableCell>
-                  <TableCell align="right">{row.email}</TableCell>
-                  <TableCell align="right">
-                    <DeleteOutlineIcon />
-                    <EditIcon />
-                    <ArrowCircleDownOutlinedIcon onClick={() => handleDownload(row)} />
+                  <TableCell >{row.name}</TableCell>
+                  <TableCell >{row.email}</TableCell>
+                  <TableCell>
+                    <DeleteOutlineIcon sx={{ paddingRight: "1rem", cursor: "pointer" }} />
+                    <EditIcon sx={{ paddingRight: "1rem", cursor: "pointer" }} />
+                    <ArrowCircleDownOutlinedIcon onClick={() => handleDownload(row)} sx={{ cursor: "pointer" }} />
                   </TableCell>
                 </TableRow>
               ))}

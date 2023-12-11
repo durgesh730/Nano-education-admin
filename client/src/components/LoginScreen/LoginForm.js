@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // mui
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // component
 import { handleLogin } from '../api'
@@ -34,8 +34,9 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 const Login = () => {
+    const navigate = useNavigate()
+    const handleSubmit = (event) => {
 
-    const handleSubmit =(event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const form = {
@@ -43,9 +44,11 @@ const Login = () => {
             password: data.get('password'),
         }
 
-         handleLogin(form)
+        handleLogin(form)
             .then((res) => {
-                console.log(res, "response");
+                if (res.status === 200) {
+                    navigate('/dashboard')
+                }
             }).catch((err) => {
                 console.log(err);
             })
