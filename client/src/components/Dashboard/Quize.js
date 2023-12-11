@@ -44,7 +44,7 @@ export default function Quize() {
   return (
     <Grid sx={{ paddingTop: '6rem' }} >
         <Grid sx={{ paddingLeft: "2rem" }} >
-          <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>Quiz Detils</Typography>
+          <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>Quiz Details</Typography>
         </Grid>
     <TableContainer component={Paper} sx={{ margin:"auto",  marginTop:'1rem', width:'96%'}}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">

@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Background from '../assets/login1.png';
 // mui
 import { Link } from 'react-router-dom';
 
@@ -61,7 +62,7 @@ const Login = () => {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+                        backgroundImage: `url(${Background})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -76,21 +77,22 @@ const Login = () => {
                     <Box
                         sx={{
                             my: 8,
-                            mx: 4,
+                            mx: 11,
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                             padding: '2rem'
                         }}
                     >
-                        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                        <Avatar sx={{ m: 1, bgcolor: '#232354' }}>
                             <LockOutlinedIcon />
                         </Avatar>
-                        <Typography component="h1" variant="h5">
-                            Sign in
+                        <Typography component="h1" variant="h4" color={"#232354"} fontStyle={"Poppins"}>
+                            Login 
                         </Typography>
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                             <TextField
+                             sx={{ mt: 8, mb: 2 }}
                                 margin="normal"
                                 size='small'
                                 required
@@ -114,21 +116,25 @@ const Login = () => {
                                 autoComplete="current-password"
                             />
                             <FormControlLabel
+                             sx={{ mt: 1, mb: 1}}
                                 control={<Checkbox value="remember" color="primary" />}
                                 label="Remember me"
                             />
+                            <br></br>
                             <Button
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
+                                
+                                sx={{ mt: 3, mb: 4 ,bgcolor: '#232354'}}
+                              
                             >
-                                Sign In
+                                LOGIN 
                             </Button>
 
                             <Grid container>
-                                <Grid item xs><Link href="#" variant="body2">Forgot password?</Link></Grid>
-                                <Grid><Link to={"/register"} sx={{ cursor: "pointer" }}>{"Don't have an account? Sign Up"}</Link></Grid>
+                                <Grid item xs><Link to={"/forgotPassword"} variant="body2">Forgot password?</Link></Grid>
+                                <Grid><Link to={"/register"} sx={{ cursor: "pointer",bgcolor: '#232354' }}>{"Don't have an account?"} <br></br>{"Sign Up"}</Link></Grid>
                             </Grid>
                             <Copyright sx={{ mt: 5 }} />
                         </Box>

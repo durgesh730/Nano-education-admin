@@ -153,7 +153,7 @@ const ForgetPasswordForm = () => {
                 <button className={styles.button} type="submit">Reset Password</button>
               </form>
               <Link to="/" className={styles.linkButton}>
-                Back to SignIn
+                Back to Login
               </Link>
             </>
           ) : (
@@ -215,13 +215,7 @@ const ForgetPasswordForm = () => {
             </>
           )}
         </div>
-        <div className={styles.rightContainer}>
-          <img
-            // src={rightContainerImage}
-            alt="Right Container"
-            className={styles.rightImage}
-          />
-        </div>
+        
       </div>
     </div>
   );

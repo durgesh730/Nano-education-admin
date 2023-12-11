@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Background from '../assets/login2.png';
 
 // react 
 import { Link } from 'react-router-dom';
@@ -53,7 +54,7 @@ const Register = () => {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+                        backgroundImage: `url(${Background})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -66,20 +67,21 @@ const Register = () => {
                     <Box
                         sx={{
                             my: 8,
-                            mx: 4,
+                            mx: 15,
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                         }}
                     >
-                        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                        <Avatar sx={{ m: 1, bgcolor: "#232354" }}>
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
-                            Sign in
+                            Sign up
                         </Typography>
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                             <TextField
+                             sx={{ mt: 8, mb: 2 }}
                                 margin="normal"
                                 size='small'
                                 required
@@ -104,6 +106,7 @@ const Register = () => {
                             />
 
                             <TextField
+                            sx={{ mt: 2, mb: 2 }}
                                 margin="normal"
                                 size='small'
                                 required
@@ -123,20 +126,20 @@ const Register = () => {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
+                                sx={{ mt: 3, mb: 2, bgcolor: '#232354'}}
                             >
-                                Sign In
+                                Sign UP
                             </Button>
 
                             <Grid container>
                                 <Grid item xs>
-                                    <Link href="#" variant="body2">
+                                    <Link to={'/'} variant="body2">
                                         Forgot password?
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link to={'/'} sx={{ cursor: "pointer" }}>
-                                        {"Already have an account? Sign In"}
+                                    <Link to={"/forgotPassword"} sx={{ cursor: "pointer" }}>
+                                        {"Already have an account? "}<br></br>{"Sign In"}
                                     </Link>
 
                                 </Grid>
